@@ -1,0 +1,30 @@
+<div class="container-fluid"><h1>Funcionarios <button href="#" [routerLink]="['/funcionarios', 'new']" type="button" class="btn btn-primary">
+    Adicionar
+  </button></h1>
+
+  <div id="notificationMessage" *ngIf="funcionarios.length == 0" class="alert alert-da" role="alert">
+      Lista de funcionarios vazia
+    </div>
+
+  <table *ngIf="funcionarios.length >= 1" class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">name</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let funcionario of funcionarios">
+          <th scope="row">{{funcionarios.id}}</th>
+          <td>{{funcionarios.name}}</td>
+          <td>{{funcionarios.cpf}}</td>
+          <td>{{ funcionarios.datanascimento</td>
+
+
+        </tr>
+      </tbody>
+    </table>
+
+</div>
