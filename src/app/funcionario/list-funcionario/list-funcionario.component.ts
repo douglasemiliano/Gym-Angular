@@ -3,8 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 
 import { FuncionarioService } from '../funcionario.service';
-//import { Funcionario } from '../funcionario';
 import { ApiService } from 'app/api.service';
+import { Funcionario } from '../funcionario';
 
 @Component({
   selector: 'app-list-funcionario',
@@ -14,7 +14,7 @@ import { ApiService } from 'app/api.service';
 export class ListFuncionarioComponent implements OnInit {
 
   message: string;
-  funcionario: Array<any> = [];
+  funcionarios: Array<any> = [];
 
   constructor(
     private router: Router,
@@ -23,15 +23,13 @@ export class ListFuncionarioComponent implements OnInit {
     private api: ApiService) {
   }
 
-  ngOnInit() {
+   ngOnInit() {
 
-    this.service.getAll().subscribe(data => {
-      this.funcionario = data;});
+     this.service.getAll('funcionarios').subscribe(data => {
+      console.log(data);
+      this.funcionarios = data;
+    });
 
-  }
-
-  getFuncionario() {
-    this.funcionario = this.service.getAll();
   }
 
   reload() {
@@ -41,13 +39,13 @@ export class ListFuncionarioComponent implements OnInit {
 
   show(id) {
     this.service.clearMessage();
-    this.router.navigate(['/funcionario', id]);
+    this.router.navigate(['/funcionarios', id]);
     return false;
   }
 
   edit(id) {
     this.service.clearMessage();
-    this.router.navigate(['/funcionario/edit/', id]);
+    this.router.navigate(['/funcionarios/edit/', id]);
     return false;
   }
 

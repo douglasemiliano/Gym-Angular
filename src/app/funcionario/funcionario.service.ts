@@ -10,7 +10,6 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class FuncionarioService implements OnInit {
 
-
   constructor(private appService: AppService, private apiService: ApiService) {}
 
   ngOnInit() {
@@ -24,7 +23,7 @@ export class FuncionarioService implements OnInit {
 
   getById(id: any): Observable<any>{
 
-    return this.apiService.getById('funcionarios',id);
+    return this.apiService.getById('funcionarios', id);
 
   }
 
@@ -33,29 +32,19 @@ export class FuncionarioService implements OnInit {
     return Promise.reject(error.message || error);
     }
 
-
-  // Simulate DELETE /books/:id
   delete(id: number): any {
     console.log('delete service');
     return this.apiService.delete('funcionarios/', id);
   }
 
-  // Simulate PUT /books/:id
   update(newFuncionario: Funcionario, id: number) {
-    return this.apiService.put('funcionarios/' + id, newFuncionario);
+    return this.apiService.put('funcionarios/' + id , newFuncionario);
   }
 
-  // Simulate GET /books
-  getAll(): any {
-    return this.apiService.getAll();
-  }
 
-  // // Simulate GET /books/:id
-  // getById(id: number): Funcionario {
-  //   return this.funcionario
-  //     .filter(funcionario => funcionario.id === id)
-  //     .pop();
-  // }
+  getAll(endpoint: any): any {
+    return this.apiService.getAll(endpoint);
+  }
 
   changeMessage(message: string) {
     this.appService.changeMessage(message);
@@ -64,5 +53,4 @@ export class FuncionarioService implements OnInit {
   clearMessage() {
     this.appService.clearMessage();
   }
-
 }

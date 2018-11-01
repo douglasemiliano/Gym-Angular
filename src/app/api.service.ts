@@ -6,6 +6,7 @@ import { RequestOptions, Headers, RequestMethod, RequestOptionsArgs } from '@ang
 @Injectable()
 export class ApiService {
 
+  // tslint:disable-next-line:no-inferrable-types
   url: string = 'http://localhost:4200/api/';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,8 +15,8 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAll(): Observable<any> {
-    return this.httpClient.get('localhost:8080/funcionarios');
+  getAll(endpoint: any): Observable<any> {
+    return this.httpClient.get(this.url + endpoint);
   }
 
   post(endpoint: any, body: any){
@@ -27,11 +28,6 @@ export class ApiService {
   put(endpoint: any, body: any): Observable<any>{
     return this.httpClient.put(this.url + endpoint, body, this.httpOptions);
   }
-
-  get(endpoint: any): Observable<any>{
-    return this.httpClient.get(this.url + endpoint);
-  }
-
   getById(endpoint: any, id: any): Observable<any>{
     return this.httpClient.get(this.url + endpoint + '/' + id);
   }

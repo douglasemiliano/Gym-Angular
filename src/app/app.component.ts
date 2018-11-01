@@ -9,9 +9,12 @@ import { AppService } from './app.service';
 export class AppComponent {
 
   message: string;
+  listas: Array<any>;
+  lista: any;
 
   constructor(service: AppService) {
     service.messageChanged$.subscribe(
       message => this.message = message);
   }
+
 }
