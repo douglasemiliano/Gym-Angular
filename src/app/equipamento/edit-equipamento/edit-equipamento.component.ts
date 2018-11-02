@@ -29,7 +29,7 @@ export class EditEquipamentoComponent implements OnInit {
 
           } else {
             console.log(`Equipamento with id '${id}' not found, returning to list`);
-            this.router.navigate(['/equipamento']);
+            this.router.navigate(['/equipamentos']);
           }
         });
       };

@@ -36,7 +36,7 @@ export class ClienteService implements OnInit {
   }
 
   update(newCliente: Cliente, id: number) {
-    return this.apiService.put('clientes' + id, newCliente);
+    return this.apiService.put('clientes/' + id, newCliente);
   }
 
 

@@ -40,6 +40,10 @@ export class EditClienteComponent implements OnInit {
     this.cliente.name = form.name;
     this.cliente.dataNascimento = form.dataNascimento;
     this.cliente.cpf = form.cpf;
+    this.cliente.email = form.email;
+    this.cliente.telefone = form.telefone;
+    this.cliente.plano = form.plano;
+    this.cliente.endereco = form.endereco;
     this.clienteService.update(this.cliente, this.id)
     .subscribe((result) => {console.log(result);
       alert('Cliente atualizado!');

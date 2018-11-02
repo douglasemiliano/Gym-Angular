@@ -45,9 +45,8 @@
 <div class="container-fluid"><div id="showPanel" *ngIf="funcionario">
 
   <div style="margin-left: 40%">
-    <button type="button" href="#" (click)="destroy(funcionario.id)" class="btn btn-danger">Deletar</button>
-    <a [routerLink] = "['/funcionarios/edit/', funcionario.id]"><button type="button" href="#" (click)="edit(funcionario.id)" class="btn btn-secondary">Editar</button></a> 
-    <a [routerLink]="['/funcionarios'] "><button type="button" href="#" class="btn btn-primary">Voltar</button></a>
+    <a [routerLink] = "['/funcionarios/edit/', funcionario.id]"><button type="button" href="#" (click)="edit(funcionario.id)" class="btn btn-warning">Editar</button></a> 
+    <button type="button" href="#" class="btn" style="background-color: black"><a [routerLink]="['/funcionarios']" style="color: white">Voltar</a></button>
     </div>
     <div class="btn-group-sm" role="group" aria-label="Basic example">
 

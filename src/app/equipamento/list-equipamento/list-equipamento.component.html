@@ -1,18 +1,20 @@
-<div class="container-fluid"><h1>Equipamentos <button href="#" [routerLink]="['/equipamentos', 'new']" type="button" class="btn btn-primary">
-    Adicionar
-  </button></h1>
+<div class="container-fluid">
+
+  <h1>Equipamentos </h1>
+
 
   <div id="notificationMessage" *ngIf="!equipamentos" class="alert alert-da" role="alert">
       Lista de equipamentos vazia
     </div>
-
+<div class="form">
   <table *ngIf="equipamentos" class="table">
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Peso</th>
-          <th scope="col">Tipo</th>
+          <th scope="col">Nome do equipamento</th>
+          <th scope="col">Peso do equipamento</th>
+          <th scope="col">Tipo de equipamento</th>
+          <th scope="col">Opções</th>
         </tr>
       </thead>
       <tbody>
@@ -25,13 +27,18 @@
 
           <td>
             <div class="btn-group-sm" role="group" aria-label="Basic example">
-            <button type="button" href="#" (click)="show(equipamento.id)" class="btn btn-secondary">Visualizar</button>
+            <button type="button" href="#" (click)="show(equipamento.id)" class="btn btn-success">Visualizar</button>
             <button type="button" href="#" (click)="edit(equipamento.id)" class="btn btn-secondary">Editar</button>
-            <button type="button" href="#" (click)="destroy(equipamento.id)" class="btn btn-secondary">Deletar</button>
+            <button type="button" href="#" (click)="destroy(equipamento.id)" class="btn btn-danger">Deletar</button>
             </div>
           </td>
 
         </tr>
       </tbody>
     </table>
+    <button href="#" [routerLink]="['/equipamentos', 'new']" type="button" class="btn btn-warning" style="margin-left: 47%">
+      Adicionar
+    </button>
+    </div>
+  
 </div>

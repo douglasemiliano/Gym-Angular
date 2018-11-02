@@ -1,23 +1,57 @@
+
+    <h1>Dados de {{cliente.name}}</h1>
+
+
+    <div class="form">
+        <table class="table table-striped">
+          <thead>
+          </thead>
+          <tbody>
+        <tr>
+        <th scope="row">Nome:</th>
+        <td>{{cliente.name}}</td>
+          </tr>
+          <tr>
+              <th scope="row">CPF</th>
+              <td>{{cliente.cpf}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Data de Nascimento</th>
+                <td>{{cliente.dataNascimento}}</td>
+              </tr>
+              <tr>
+                  <th scope="row">Telefone</th>
+                  <td>{{cliente.telefone}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Email</th>
+                    <td>{{cliente.email}}</td>
+                  </tr>
+                  <tr>
+                      <th scope="row">Endereço</th>
+                      <td>{{cliente.endereco}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Plano</th>
+                        <td>{{cliente.plano}}</td>
+                      </tr>
+              </tbody>
+              </table>
+
+
 <div class="container-fluid"><div id="showPanel" *ngIf="cliente">
-  <p>
-    <strong> 
-      dados de: {{cliente.name}}
-    </strong>
-    </p>
 
-  <p>
-  <strong>Data de Nascimento:</strong>
-    {{cliente.dataNascimento}}
-  </p>
-  <p>
-  <strong>CPF:</strong>
-    {{cliente.cpf}}
-  </p>
+  <div style="margin-left: 40%">
 
-  <div>
-    <button type="submit" class="btn btn-primary">Deletar</button>
-    </div>
+<button type="button" href="#" (click)="destroy(cliente.id)" class="btn btn-danger">Deletar</button>
+<a [routerLink] = "['/clientes/edit/', cliente.id]"><button type="button" href="#" (click)="edit(cliente.id)" class="btn btn-secondary">Editar</button></a> 
+<a [routerLink]="['/clientes'] "><button type="button" href="#" class="btn btn-primary">Voltar</button></a>
+</div>
+<div class="btn-group-sm" role="group" aria-label="Basic example">
 
+  </div>
+</div>
 
-  <a [routerLink] = "['/clientes/edit/', cliente.id]">Editar</a> || <a [routerLink]="['/clientes'] ">Voltar</a>
+</div>
+
 </div>

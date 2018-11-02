@@ -1,4 +1,4 @@
-<div class="container-fluid"><h1>Edit funcionarios</h1>
+<div class="container-fluid"><h1>Editando "{{funcionario.name}}"</h1>
 <div class="form">
   <form *ngIf="funcionario" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
       <div class="form-group">
@@ -35,8 +35,9 @@
     </div>
      
     <div>
-      <button type="submit" class="btn btn-primary">Atualizar</button>
-      <button type="button" class="btn btn-success"> <a [routerLink]="['/funcionarios']">Voltar</a></button>
+      <button type="submit" class="btn btn-warning">Atualizar</button>
+      <button type="button" class="btn" style="background-color: black"> <a [routerLink]="['/funcionarios']" style="color: white">Voltar </a></button>
+
     </div>
     </form>
 

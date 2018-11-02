@@ -1,36 +1,44 @@
-<div class="container-fluid"><h1>Clientes <button href="#" [routerLink]="['/clientes', 'new']" type="button" class="btn btn-primary">
-  Adicionar
-</button></h1>
+<div class="container-fluid">
+  
+  
+  <h1>Clientes</h1>
 
 <div id="notificationMessage" *ngIf="!clientes" class="alert alert-da" role="alert">
     Lista de clientes vazia
   </div>
-
+<div class="form">
 <table *ngIf="clientes" class="table">
     <thead>
       <tr>
+        <th scope="col">ID</th>
         <th scope="col">Nome</th>
-        <th scope="col">CPF</th>
-        <th scope="col">dataNascimento</th>
+        <th scope="col">Email </th>
+        <th scope="col">Plano </th>
+        <th scope="col">Opções</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let cliente of clientes">
         <th scope="row">{{cliente.id}}</th>
         <td>{{cliente.name}}</td>
-        <td>{{cliente.cpf}}</td>
-        <td>{{ cliente.dataNascimento }}</td>
+        <td>{{cliente.email}}</td>
+        <td>{{ cliente.plano }}</td>
         
 
         <td>
           <div class="btn-group-sm" role="group" aria-label="Basic example">
-          <button type="button" href="#" (click)="show(cliente.id)" class="btn btn-secondary">Visualizar</button>
+          <button type="button" href="#" (click)="show(cliente.id)" class="btn btn-success">Visualizar</button>
           <button type="button" href="#" (click)="edit(cliente.id)" class="btn btn-secondary">Editar</button>
-          <button type="button" href="#" (click)="destroy(cliente.id)" class="btn btn-secondary">Deletar</button>
+          <button type="button" href="#" (click)="destroy(cliente.id)" class="btn btn-danger">Deletar</button>
           </div>
         </td>
 
       </tr>
     </tbody>
   </table>
+
+  <button href="#" [routerLink]="['/clientes', 'new']" type="button" class="btn btn-warning" style="margin-left: 47%">
+    Adicionar
+  </button>
+</div>
 </div>

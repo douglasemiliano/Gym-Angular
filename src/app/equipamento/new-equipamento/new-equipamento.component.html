@@ -1,9 +1,9 @@
-<div class="container-fluid"><h1>New Equipamento</h1>
-
+<div class="container-fluid"><h1>Cadastrar novo quipamento</h1>
+<div class="form">
     <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
         <div class="form-group">
-            <label for="equipamento_name">name</label>
-            <input type="text" class="form-control" id="equipamento_name" name="name" placeholder="name completo" ngModel>
+            <label for="equipamento_name">Nome</label>
+            <input type="text" class="form-control" id="equipamento_name" name="name" placeholder="EX: Rosca" ngModel>
         </div>
         <div class="form-group">
             <label for="equipamento_peso">Peso</label>
@@ -13,11 +13,16 @@
             <label for="equipamento_tipo">Tipo</label>
             <input type="text" class="form-control" id="equipamento_tipo" name="tipo" placeholder="Corrida" ngModel>
         </div>
+        <div class="form-group">
+                <label for="equipamento_descricao">Descrição</label>
+                <input type="text" class="form-control" id="equipamento_descricao" name="descricao" placeholder="Uma breve descrição do equipamento" ngModel>
+            </div>
+            
         
         <div>
-        <button type="submit" class="btn btn-primary">Adicionar</button>
+        <button type="submit" class="btn btn-warning">Adicionar</button>
+        <button type="button" class="btn" style="background-color: black"> <a [routerLink]="['/equipamentos']" style="color: white">Voltar</a></button>
         </div>
     </form>
-
-    <a [routerLink]="['/equipamentos']">Voltar</a>
+</div>
 </div>
